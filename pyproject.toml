@@ -1,0 +1,52 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "atlidreader"
+description = "EarthCARE ATLID H5 readers"
+readme = "README.md"
+requires-python = ">3.10,<3.15"
+license-files = ["LICENSE"]
+keywords = []
+authors = [
+  { name = "Willem Marais", email = "marais@wisc.edu" },
+  { name = "Dongwei Fu", email = "dfu43@wisc.edu" },
+  { name = "Robert Holz", email = "reholz@ssec.wisc.edu" },
+]
+classifiers = [
+  "Private :: Do Not Upload",
+]
+dependencies = [
+  "numpy",
+  "nbstripout",
+  "netCDF4",
+  "xarray",
+  "pandas",
+  "scipy",
+  "attrs",
+  "matplotlib",
+  "jupyterlab",
+  "ipywidgets",
+  "h5netcdf",
+  "pre-commit",
+  "typer"
+]
+dynamic = ["version"]
+
+[tool.hatch.version]
+path = "src/atlidreader/__init__.py"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.envs.default]
+dependencies = [
+  "pytest",
+]
+
+[tool.hatch.build.targets.wheel]
+  packages = ["src/atlidreader"]
+
+[project.scripts]
+atlidtonetcdf = "atlidreader.cli.atlidtonetcdf:app"
