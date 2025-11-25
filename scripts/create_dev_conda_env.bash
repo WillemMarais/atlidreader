@@ -12,7 +12,7 @@ conda env list \
     || conda remove --name atlidreader --all --yes
 
 # Create environment
-conda create --name atlidreader "python>3.10" hatch gitpython pip -y -c conda-forge
+conda create --name atlidreader "python<3.14" hatch gitpython pip -y -c conda-forge
 
 # First make sure that we are in the correct
 # conda environment
