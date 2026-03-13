@@ -36,7 +36,10 @@ class AAER2AReader(ReaderProtocol):
 
         file_name_str = Path(fileP).name
 
-        return ("ECA_EXBA_ATL_AER_2A_" in file_name_str) and ("h5" in file_name_str)
+        return (
+            ("ECA_EXBA_ATL_AER_2A_" in file_name_str)
+            or ("ECA_EXBC_ATL_AER_2A_" in file_name_str)
+        ) and ("h5" in file_name_str)
 
     def _open_dataset(self):
         """Open the dataset."""

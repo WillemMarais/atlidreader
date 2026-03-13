@@ -51,7 +51,7 @@ ECA_EXBA_ATL_AER_2A_20240813T153830Z_20250721T104244Z_01193E.nc
 
 ## Developer tools
 
-Create the conda enviroment in which the developent is done:
+Create the conda environment in which the development is done:
 ```bash
 /bin/bash scripts/create_dev_conda_env.bash
 ```
